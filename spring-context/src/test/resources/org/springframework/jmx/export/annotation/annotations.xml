@@ -7,7 +7,7 @@
 		<property name="beans">
 			<map>
 				<entry key="namingTest">
-					<ref bean="testBean"/>
+					<ref bean="beanTest"/>
 				</entry>
 			</map>
 		</property>
@@ -19,7 +19,7 @@
 		</property>
 	</bean>
 
-	<bean id="testBean" class="org.springframework.jmx.export.annotation.AnnotationTestSubBean">
+	<bean id="beanTest" class="org.springframework.jmx.export.annotation.AnnotationTestSubBean">
 		<property name="name" value="TEST"/>
 		<property name="age" value="100"/>
 	</bean>

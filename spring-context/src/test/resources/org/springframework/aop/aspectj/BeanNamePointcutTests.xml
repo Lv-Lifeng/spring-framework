@@ -10,7 +10,7 @@
 			<aop:pointcut id="bean1Operation" expression="execution(* set*(..)) and bean(myBean) and !bean(foo)"/>
 			<aop:before pointcut-ref="bean1Operation" method="increment()"/>
 
-			<aop:pointcut id="nestedBeanOperation" expression="execution(* getCompany(..)) and bean(testBean*)"/>
+			<aop:pointcut id="nestedBeanOperation" expression="execution(* getCompany(..)) and bean(beanTest*)"/>
 			<aop:before pointcut-ref="nestedBeanOperation" method="increment()"/>
 
 			<aop:pointcut id="factoryBean1Operation" expression="bean(testFactoryBean1)"/>
@@ -21,13 +21,13 @@
 		</aop:aspect>
 	</aop:config>
 
-	<bean id="tb1" name="testBean1" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="tb1" name="testBean1" class="org.springframework.tests.sample.beans.BeanTests">
 		<qualifier value="myBean"/>
 	</bean>
 
-	<bean id="tb2" name="testBean2" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="tb2" name="testBean2" class="org.springframework.tests.sample.beans.BeanTests"/>
 
-	<bean id="testBeanContainingNestedBean" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="testBeanContainingNestedBean" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="doctor">
 			<bean class="org.springframework.tests.sample.beans.NestedTestBean"/>
 		</property>
@@ -55,9 +55,9 @@
 		<aop:advisor pointcut="bean(*This) and !bean(dont*)" advice-ref="testInterceptor"/>
 	</aop:config>
 
-	<bean id="interceptThis" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="interceptThis" class="org.springframework.tests.sample.beans.BeanTests"/>
 
-	<bean id="dontInterceptThis" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="dontInterceptThis" class="org.springframework.tests.sample.beans.BeanTests"/>
 
 	<bean id="testInterceptor" class="org.springframework.aop.aspectj.BeanNamePointcutTests$TestInterceptor"/>
 

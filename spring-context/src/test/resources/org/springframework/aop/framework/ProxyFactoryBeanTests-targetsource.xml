@@ -8,7 +8,7 @@
 <beans>
 
 	<!-- Simple target -->
-	<bean id="target" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="target" class="org.springframework.tests.sample.beans.BeanTests">
 		<!-- initial value :-) -->
 		<property name="name"><value>Adam</value></property>
 	</bean>

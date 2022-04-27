@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="sessionScopedObject" class="org.springframework.tests.sample.beans.TestBean" scope="session"/>
+	<bean id="sessionScopedObject" class="org.springframework.tests.sample.beans.BeanTests" scope="session"/>
 
 	<bean id="sessionScopedDisposableObject" class="org.springframework.tests.sample.beans.DerivedTestBean" scope="session"/>
 

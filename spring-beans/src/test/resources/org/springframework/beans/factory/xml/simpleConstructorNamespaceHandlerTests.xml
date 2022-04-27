@@ -23,12 +23,12 @@
 	</bean>
 
 <!--
-	<bean id="name-value1" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="name-value1" class="org.springframework.tests.sample.beans.BeanTests">
 		<constructor-arg name="name" value="foo"/>
 		<constructor-arg name="age" value="10"/>
 	</bean>
  -->
-	<bean id="name-value" class="org.springframework.tests.sample.beans.TestBean" c:age="10" c:name="name-value"/>
+	<bean id="name-value" class="org.springframework.tests.sample.beans.BeanTests" c:age="10" c:name="name-value"/>
 
 <!-- 
 	<bean id="name-ref1" class="org.springframework.tests.sample.beans.DummyBean">

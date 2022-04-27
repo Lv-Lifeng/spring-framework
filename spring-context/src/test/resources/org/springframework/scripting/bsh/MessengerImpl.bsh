@@ -1,11 +1,11 @@
-import org.springframework.tests.sample.beans.TestBean;
+import org.springframework.tests.sample.beans.BeanTests;
 import org.springframework.scripting.TestBeanAwareMessenger;
 
 public class MyMessenger implements TestBeanAwareMessenger {
 
 	private String message;
 
-	private TestBean testBean;
+	private BeanTests beanTest;
 
 	private boolean active;
 
@@ -22,12 +22,12 @@ public class MyMessenger implements TestBeanAwareMessenger {
 		message = aMessage;
 	}
 
-	public TestBean getTestBean() {
-		return testBean;
+	public BeanTests getTestBean() {
+		return beanTest;
 	}
 
-	public void setTestBean(TestBean tb) {
-		testBean = tb;
+	public void setTestBean(BeanTests tb) {
+		beanTest = tb;
 	}
 
 	public void destroy() {

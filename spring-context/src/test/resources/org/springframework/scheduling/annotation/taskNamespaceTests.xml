@@ -27,6 +27,6 @@
 		<property name="threadNamePrefix" value="testScheduler"/>
 	</bean>
 
-	<bean id="target" class="org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessorTests$TestBean"/>
+	<bean id="target" class="org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessorTests$BeanTests"/>
 
 </beans>

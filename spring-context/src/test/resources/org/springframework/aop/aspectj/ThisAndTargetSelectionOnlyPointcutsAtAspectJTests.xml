@@ -10,7 +10,7 @@
 	<bean id="counter"
 		class="org.springframework.aop.aspectj.ThisAndTargetSelectionOnlyPointcutsAtAspectJTests$Counter" />
 
-	<bean id="testBean" class="org.springframework.aop.aspectj.ThisAndTargetSelectionOnlyPointcutsAtAspectJTests$TestImpl" />
+	<bean id="beanTest" class="org.springframework.aop.aspectj.ThisAndTargetSelectionOnlyPointcutsAtAspectJTests$TestImpl" />
 	<bean id="testAnnotatedClassBean" class="org.springframework.aop.aspectj.ThisAndTargetSelectionOnlyPointcutsAtAspectJTests$AnnotatedClassTestImpl" />
 	<bean id="testAnnotatedMethodBean" class="org.springframework.aop.aspectj.ThisAndTargetSelectionOnlyPointcutsAtAspectJTests$AnnotatedMethodTestImpl" />
 

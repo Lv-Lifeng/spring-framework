@@ -7,7 +7,7 @@
 		<property name="beans">
 			<map>
 				<entry key="bean:name=testBean5">
-					<ref bean="testBean"/>
+					<ref bean="beanTest"/>
 				</entry>
 			</map>
 		</property>
@@ -27,7 +27,7 @@
 		</property>
 	</bean>
 
-	<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+	<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 		<property name="name">
 			<value>TEST</value>
 		</property>

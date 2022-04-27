@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="optimizedTestBean" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="optimizedTestBean" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name" value="Optimized"/>
 	</bean>
 
@@ -13,7 +13,7 @@
 		<property name="advice" ref="countingAdvice"/>
 		<property name="patterns">
 			<list>
-				<value>.*beans.I?TestBean.*</value>
+				<value>.*beans.I?BeanTests.*</value>
 			</list>
 		</property>
 	</bean>

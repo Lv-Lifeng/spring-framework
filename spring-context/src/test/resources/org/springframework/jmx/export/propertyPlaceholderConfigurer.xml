@@ -6,8 +6,8 @@
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
-				<prop key="testBean.name">Rob Harrop</prop>
-				<prop key="testBean.age">100</prop>
+				<prop key="beanTest.name">Rob Harrop</prop>
+				<prop key="beanTest.age">100</prop>
 				<prop key="scopeName">myScope</prop>
 			</props>
 		</property>
@@ -27,19 +27,19 @@
 		<property name="beans">
 			<map>
 				<entry key="bean:name=proxyTestBean1">
-					<ref bean="testBean"/>
+					<ref bean="beanTest"/>
 				</entry>
 			</map>
 		</property>
     <property name="server" ref="server"/>
 	</bean>
 
-	<bean id="testBean" class="org.springframework.jmx.JmxTestBean" scope="myScope">
+	<bean id="beanTest" class="org.springframework.jmx.JmxTestBean" scope="myScope">
 		<property name="name">
-			<value>${testBean.name}</value>
+			<value>${beanTest.name}</value>
 		</property>
 		<property name="age">
-			<value>${testBean.age}</value>
+			<value>${beanTest.age}</value>
 		</property>
 		<property name="nickName">
 			<null/>

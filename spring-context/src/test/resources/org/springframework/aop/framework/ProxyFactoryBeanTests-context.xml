@@ -4,7 +4,7 @@
 <beans>
 
 	<!-- Simple target -->
-	<bean id="test" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="test" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name"><value>custom</value></property>
 		<property name="age"><value>666</value></property>
 	</bean>
@@ -74,7 +74,7 @@
 		<property name="targetName"><value>testCircleTarget1</value></property>
 	</bean>
 
-	<bean id="testCircleTarget1" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="testCircleTarget1" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name"><value>custom</value></property>
 		<property name="age"><value>666</value></property>
 		<property name="spouse"><ref bean="testCircle2"/></property>
@@ -85,7 +85,7 @@
 		<property name="targetName"><value>testCircleTarget2</value></property>
 	</bean>
 
-	<bean id="testCircleTarget2" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="testCircleTarget2" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name"><value>custom</value></property>
 		<property name="age"><value>666</value></property>
 		<property name="spouse"><ref bean="testCircle1"/></property>
@@ -137,7 +137,7 @@
 
 	<bean id="prototypeLockMixinAdvisor" class="test.mixin.LockMixinAdvisor" scope="prototype"/>
 
-	<bean id="prototypeTestBean" class="org.springframework.tests.sample.beans.TestBean" scope="prototype"/>
+	<bean id="prototypeTestBean" class="org.springframework.tests.sample.beans.BeanTests" scope="prototype"/>
 
 	<bean id="prototypeTestBeanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="interfaces"><value>org.springframework.tests.sample.beans.ITestBean</value></property>

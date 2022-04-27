@@ -9,6 +9,6 @@
 
 	<bean id="counterAspect" class="org.springframework.aop.aspectj.generic.CounterAspect"/>
 
-	<bean id="testBean" class="org.springframework.aop.aspectj.generic.GenericReturnTypeVariationClass"/>
+	<bean id="beanTest" class="org.springframework.aop.aspectj.generic.GenericReturnTypeVariationClass"/>
 
 </beans>

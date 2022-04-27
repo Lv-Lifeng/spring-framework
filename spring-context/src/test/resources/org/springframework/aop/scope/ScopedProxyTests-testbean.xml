@@ -3,9 +3,9 @@
 
 <beans>
 
-	<bean id="testBeanTarget" class="org.springframework.tests.sample.beans.TestBean" scope="request"/>
+	<bean id="testBeanTarget" class="org.springframework.tests.sample.beans.BeanTests" scope="request"/>
 
-	<bean id="testBean" class="org.springframework.aop.scope.ScopedProxyFactoryBean">
+	<bean id="beanTest" class="org.springframework.aop.scope.ScopedProxyFactoryBean">
 		<property name="targetBeanName" value="testBeanTarget"/>
 		<property name="proxyTargetClass" value="false"/>
 	</bean>

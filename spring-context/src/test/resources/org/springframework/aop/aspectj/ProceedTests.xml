@@ -19,7 +19,7 @@
 		</aop:aspect>
 	</aop:config>
 
-	<bean id="testBean" class="org.springframework.aop.aspectj.SimpleBeanImpl"/>
+	<bean id="beanTest" class="org.springframework.aop.aspectj.SimpleBeanImpl"/>
 
 	<bean id="firstTestAspect"  class="org.springframework.aop.aspectj.ProceedTestingAspect">
 	   <property name="order" value="1"/>

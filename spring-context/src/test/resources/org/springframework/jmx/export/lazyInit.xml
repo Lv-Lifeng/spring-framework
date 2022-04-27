@@ -6,7 +6,7 @@
 	<bean class="org.springframework.jmx.export.MBeanExporter">
 		<property name="beans">
 			<map>
-				<entry key="bean:name=testBean1" value="testBean"/>
+				<entry key="bean:name=testBean1" value="beanTest"/>
 				<entry key="bean:name=testBean2" value="testBean2"/>
 			</map>
 		</property>
@@ -14,7 +14,7 @@
 		<property name="autodetect" value="true"/>
 	</bean>
 
-	<bean id="testBean" class="org.springframework.jmx.export.ExceptionOnInitBean" lazy-init="true">
+	<bean id="beanTest" class="org.springframework.jmx.export.ExceptionOnInitBean" lazy-init="true">
 		<property name="exceptOnInit" value="true"/>
 		<property name="name" value="foo"/>
 	</bean>

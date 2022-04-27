@@ -4088,7 +4088,7 @@ to do so:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<bean id="inheritedTestBean" abstract="true"
-			class="org.springframework.beans.TestBean">
+			class="org.springframework.beans.BeanTests">
 		<property name="name" value="parent"/>
 		<property name="age" value="1"/>
 	</bean>
@@ -6696,8 +6696,8 @@ annotated classes. The following example shows how to do so:
 
 		@Bean
 		@Qualifier("public")
-		public TestBean publicInstance() {
-			return new TestBean("publicInstance");
+		public BeanTests publicInstance() {
+			return new BeanTests("publicInstance");
 		}
 
 		public void doWork() {
@@ -6713,7 +6713,7 @@ annotated classes. The following example shows how to do so:
 
 		@Bean
 		@Qualifier("public")
-		fun publicInstance() = TestBean("publicInstance")
+		fun publicInstance() = BeanTests("publicInstance")
 
 		fun doWork() {
 			// Component method implementation omitted
@@ -6745,30 +6745,30 @@ support for autowiring of `@Bean` methods. The following example shows how to do
 
 		@Bean
 		@Qualifier("public")
-		public TestBean publicInstance() {
-			return new TestBean("publicInstance");
+		public BeanTests publicInstance() {
+			return new BeanTests("publicInstance");
 		}
 
 		// use of a custom qualifier and autowiring of method parameters
 		@Bean
-		protected TestBean protectedInstance(
-				@Qualifier("public") TestBean spouse,
+		protected BeanTests protectedInstance(
+				@Qualifier("public") BeanTests spouse,
 				@Value("#{privateInstance.age}") String country) {
-			TestBean tb = new TestBean("protectedInstance", 1);
+			BeanTests tb = new BeanTests("protectedInstance", 1);
 			tb.setSpouse(spouse);
 			tb.setCountry(country);
 			return tb;
 		}
 
 		@Bean
-		private TestBean privateInstance() {
-			return new TestBean("privateInstance", i++);
+		private BeanTests privateInstance() {
+			return new BeanTests("privateInstance", i++);
 		}
 
 		@Bean
 		@RequestScope
-		public TestBean requestScopedInstance() {
-			return new TestBean("requestScopedInstance", 3);
+		public BeanTests requestScopedInstance() {
+			return new BeanTests("requestScopedInstance", 3);
 		}
 	}
 ----
@@ -6784,23 +6784,23 @@ support for autowiring of `@Bean` methods. The following example shows how to do
 
 		@Bean
 		@Qualifier("public")
-		fun publicInstance() = TestBean("publicInstance")
+		fun publicInstance() = BeanTests("publicInstance")
 
 		// use of a custom qualifier and autowiring of method parameters
 		@Bean
 		protected fun protectedInstance(
-				@Qualifier("public") spouse: TestBean,
-				@Value("#{privateInstance.age}") country: String) = TestBean("protectedInstance", 1).apply {
+				@Qualifier("public") spouse: BeanTests,
+				@Value("#{privateInstance.age}") country: String) = BeanTests("protectedInstance", 1).apply {
 			this.spouse = spouse
 			this.country = country
 		}
 
 		@Bean
-		private fun privateInstance() = TestBean("privateInstance", i++)
+		private fun privateInstance() = BeanTests("privateInstance", i++)
 
 		@Bean
 		@RequestScope
-		fun requestScopedInstance() = TestBean("requestScopedInstance", 3)
+		fun requestScopedInstance() = BeanTests("requestScopedInstance", 3)
 	}
 ----
 
@@ -6828,8 +6828,8 @@ The following example shows how to do use `InjectionPoint`:
 	public class FactoryMethodComponent {
 
 		@Bean @Scope("prototype")
-		public TestBean prototypeInstance(InjectionPoint injectionPoint) {
-			return new TestBean("prototypeInstance for " + injectionPoint.getMember());
+		public BeanTests prototypeInstance(InjectionPoint injectionPoint) {
+			return new BeanTests("prototypeInstance for " + injectionPoint.getMember());
 		}
 	}
 ----
@@ -6842,7 +6842,7 @@ The following example shows how to do use `InjectionPoint`:
 		@Bean
 		@Scope("prototype")
 		fun prototypeInstance(injectionPoint: InjectionPoint) =
-				TestBean("prototypeInstance for ${injectionPoint.member}")
+				BeanTests("prototypeInstance for ${injectionPoint.member}")
 	}
 ----
 
@@ -10048,7 +10048,7 @@ to Spring's `Environment`.
 
 Given a file called `app.properties` that contains the key-value pair `testbean.name=myTestBean`,
 the following `@Configuration` class uses `@PropertySource` in such a way that
-a call to `testBean.getName()` returns `myTestBean`:
+a call to `beanTest.getName()` returns `myTestBean`:
 
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 .Java
@@ -10061,10 +10061,10 @@ a call to `testBean.getName()` returns `myTestBean`:
 	   Environment env;
 
 	   @Bean
-	   public TestBean testBean() {
-		   TestBean testBean = new TestBean();
-		   testBean.setName(env.getProperty("testbean.name"));
-		   return testBean;
+	   public BeanTests beanTest() {
+		   BeanTests beanTest = new BeanTests();
+		   beanTest.setName(env.getProperty("testbean.name"));
+		   return beanTest;
 	   }
    }
 ----
@@ -10079,7 +10079,7 @@ a call to `testBean.getName()` returns `myTestBean`:
 		private lateinit var env: Environment
 
 		@Bean
-		fun testBean() = TestBean().apply {
+		fun beanTest() = BeanTests().apply {
 			name = env.getProperty("testbean.name")!!
 		}
 	}
@@ -10100,10 +10100,10 @@ environment, as the following example shows:
 	   Environment env;
 
 	   @Bean
-	   public TestBean testBean() {
-		   TestBean testBean = new TestBean();
-		   testBean.setName(env.getProperty("testbean.name"));
-		   return testBean;
+	   public BeanTests beanTest() {
+		   BeanTests beanTest = new BeanTests();
+		   beanTest.setName(env.getProperty("testbean.name"));
+		   return beanTest;
 	   }
    }
 ----
@@ -10118,7 +10118,7 @@ environment, as the following example shows:
 		private lateinit var env: Environment
 
 		@Bean
-		fun testBean() = TestBean().apply {
+		fun beanTest() = BeanTests().apply {
 			name = env.getProperty("testbean.name")!!
 		}
 	}

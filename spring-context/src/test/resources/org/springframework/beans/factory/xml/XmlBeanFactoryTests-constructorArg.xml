@@ -13,7 +13,7 @@
 		<constructor-arg><ref bean="other"/></constructor-arg>
 	</bean>
 
-	<bean id="rod2Accessor" class="org.springframework.tests.sample.beans.TestBean" lazy-init="true">
+	<bean id="rod2Accessor" class="org.springframework.tests.sample.beans.BeanTests" lazy-init="true">
 		<property name="friends">
 			<list>
 				<ref bean="rod2"/>
@@ -117,7 +117,7 @@
 	<bean id="rod18" class="org.springframework.beans.factory.xml.SimpleConstructorArgBean" scope="prototype">
 	</bean>
 
-	<bean id="kerry1" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="kerry1" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name">
 			<value>Kerry1</value>
 		</property>
@@ -126,7 +126,7 @@
 		</property>
 	</bean>
 
-	<bean id="kerry2" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="kerry2" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name">
 			<value>Kerry2</value>
 		</property>

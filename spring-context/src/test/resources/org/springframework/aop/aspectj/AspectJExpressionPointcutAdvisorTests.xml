@@ -5,7 +5,7 @@
 
 	<bean id="proxyCreator" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
 
-	<bean id="testBean" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="beanTest" class="org.springframework.tests.sample.beans.BeanTests"/>
 
 	<bean id="advisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
 		<property name="expression"

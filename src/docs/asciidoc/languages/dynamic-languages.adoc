@@ -756,12 +756,12 @@ Validation using Spring’s Validator interface>> for a discussion of the
 ----
 	import org.springframework.validation.Validator
 	import org.springframework.validation.Errors
-	import org.springframework.beans.TestBean
+	import org.springframework.beans.BeanTests
 
 	class TestBeanValidator implements Validator {
 
 		boolean supports(Class clazz) {
-			return TestBean.class.isAssignableFrom(clazz)
+			return BeanTests.class.isAssignableFrom(clazz)
 		}
 
 		void validate(Object bean, Errors errors) {

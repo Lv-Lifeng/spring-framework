@@ -8,7 +8,7 @@
 		<property name="attributesMap">
 			<map>
 				<entry key="test1"><value>testvalue1</value></entry>
-				<entry key="test2"><ref bean="testBean"/></entry>
+				<entry key="test2"><ref bean="beanTest"/></entry>
 			</map>
 		</property>
 		<property name="location"><value>test</value></property>

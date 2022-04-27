@@ -12,7 +12,7 @@
 		</property>
 	</bean>
 
-	<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+	<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 		<property name="name">
 			<value>TEST</value>
 		</property>

@@ -10,13 +10,13 @@
 
 	<bean id="eveTargetSource" class="org.springframework.aop.target.SingletonTargetSource">
 		<constructor-arg>
-			<bean class="org.springframework.tests.sample.beans.TestBean">
+			<bean class="org.springframework.tests.sample.beans.BeanTests">
 				<property name="name"><value>Eve</value></property>
 			</bean>
 		</constructor-arg>
 	</bean>
 
-	<bean id="adam" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="adam" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name"><value>Adam</value></property>
 	</bean>
 

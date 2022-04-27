@@ -4,7 +4,7 @@
 <beans>
 
 	<!-- Simple target -->
-	<bean id="test" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="test" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name"><value>custom</value></property>
 		<property name="age"><value>666</value></property>
 	</bean>
@@ -49,7 +49,7 @@
 
 	<bean id="settersAndAbsquatulateAdvised" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="proxyInterfaces"><value>org.springframework.tests.sample.beans.ITestBean</value></property>
-		<!-- Force CGLIB so we can cast to TestBean -->
+		<!-- Force CGLIB so we can cast to BeanTests -->
 		<property name="proxyTargetClass"><value>true</value></property>
 		<property name="target"><ref bean="test"/></property>
 		<property name="interceptorNames"><value>settersAndAbsquatulateAdvisor</value></property>

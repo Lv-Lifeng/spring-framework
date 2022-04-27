@@ -56,7 +56,7 @@
 		<property name="order"><value>10</value></property>
 	</bean>
 
-	<!-- ====== Test for prototype definitions to try to provoke circular references ========================= -->
+	<!-- ====== com.lvlifeng.DemoTests for prototype definitions to try to provoke circular references ========================= -->
 	<!--
 		This advisor should never match and should not change how any of the tests run,
 		but it's a prototype referencing another (unused) prototype, as well as a
@@ -74,9 +74,9 @@
 
 	<!-- These two beans would otherwise be eligible for autoproxying -->
 
-	<bean id="singletonDependency" class="org.springframework.tests.sample.beans.TestBean" scope="singleton"/>
+	<bean id="singletonDependency" class="org.springframework.tests.sample.beans.BeanTests" scope="singleton"/>
 
-	<bean id="prototypeDependency" class="org.springframework.tests.sample.beans.TestBean" scope="prototype"/>
+	<bean id="prototypeDependency" class="org.springframework.tests.sample.beans.BeanTests" scope="prototype"/>
 
 	<!-- ====== End test for prototype definitions to try to provoke circular references ========================= -->
 
@@ -87,7 +87,7 @@
 
 	<bean id="countingAdvice" class="org.springframework.tests.aop.advice.CountingAfterReturningAdvice"/>
 
-	<bean id="test" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="test" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="age"><value>4</value></property>
 	</bean>
 
@@ -97,7 +97,7 @@
 
 	<!-- The following beans test whether auto-proxying falls over for a null value -->
 
-	<bean id="tb" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="tb" class="org.springframework.tests.sample.beans.BeanTests"/>
 
 	<bean id="nullValueReturned" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="tb"/>

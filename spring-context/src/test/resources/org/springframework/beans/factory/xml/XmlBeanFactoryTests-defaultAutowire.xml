@@ -15,7 +15,7 @@
 		<!-- Should not pick up spouse automatically -->
 	</bean>
 
-	<bean id="spouse" class="org.springframework.tests.sample.beans.TestBean" autowire="no">
+	<bean id="spouse" class="org.springframework.tests.sample.beans.BeanTests" autowire="no">
 		<property name="name">
 			<value>Kerry</value>
 		</property>

@@ -26,8 +26,8 @@
         <constructor-arg value="#2"/>
     </bean>
 
-    <bean id="testBean"
-          class="org.springframework.beans.factory.annotation.CustomAutowireConfigurerTests$TestBean"
+    <bean id="beanTest"
+          class="org.springframework.beans.factory.annotation.CustomAutowireConfigurerTests$BeanTests"
           autowire="constructor"/>
 
 </beans>

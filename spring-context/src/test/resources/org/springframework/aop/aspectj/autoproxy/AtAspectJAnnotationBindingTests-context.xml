@@ -9,7 +9,7 @@
 
 	<bean id="testAspect" class="org.springframework.aop.aspectj.autoproxy.AtAspectJAnnotationBindingTestAspect"/>
 
-	<bean id="testBean" class="org.springframework.aop.aspectj.autoproxy.AnnotatedTestBeanImpl"/>
+	<bean id="beanTest" class="org.springframework.aop.aspectj.autoproxy.AnnotatedTestBeanImpl"/>
 
 	<bean id="arrayFactoryBean" class="org.springframework.aop.aspectj.autoproxy.ResourceArrayFactoryBean"/>
 

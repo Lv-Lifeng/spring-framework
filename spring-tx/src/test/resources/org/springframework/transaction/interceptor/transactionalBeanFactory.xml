@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="targetDependency" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="targetDependency" class="org.springframework.tests.sample.beans.BeanTests">
 		<property name="name"><value>dependency</value></property>
 	</bean>
 

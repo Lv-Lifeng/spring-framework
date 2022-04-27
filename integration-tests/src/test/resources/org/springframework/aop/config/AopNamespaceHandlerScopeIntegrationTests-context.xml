@@ -11,19 +11,19 @@
 
 	<bean id="advice" class="org.springframework.aop.interceptor.DebugInterceptor"/>
 
-	<bean id="testBean" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="beanTest" class="org.springframework.tests.sample.beans.BeanTests"/>
 
-	<bean id="singletonScoped" class="org.springframework.tests.sample.beans.TestBean">
+	<bean id="singletonScoped" class="org.springframework.tests.sample.beans.BeanTests">
 		<aop:scoped-proxy/>
 		<property name="name" value="Rob Harrop"/>
 	</bean>
 
-	<bean id="requestScoped" class="org.springframework.tests.sample.beans.TestBean" scope="request">
+	<bean id="requestScoped" class="org.springframework.tests.sample.beans.BeanTests" scope="request">
 		<aop:scoped-proxy/>
 		<property name="name" value="Rob Harrop"/>
 	</bean>
 
-	<bean id="sessionScoped" name="sessionScopedAlias" class="org.springframework.tests.sample.beans.TestBean" scope="session">
+	<bean id="sessionScoped" name="sessionScopedAlias" class="org.springframework.tests.sample.beans.BeanTests" scope="session">
 		<aop:scoped-proxy proxy-target-class="false"/>
 		<property name="name" value="Rob Harrop"/>
 	</bean>

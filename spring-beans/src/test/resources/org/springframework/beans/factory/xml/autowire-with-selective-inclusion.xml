@@ -4,9 +4,9 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
 		default-autowire-candidates="props*,*ly">
 
-	<bean id="rob" class="org.springframework.tests.sample.beans.TestBean" autowire="byType"/>
+	<bean id="rob" class="org.springframework.tests.sample.beans.BeanTests" autowire="byType"/>
 
-	<bean id="sally" class="org.springframework.tests.sample.beans.TestBean"/>
+	<bean id="sally" class="org.springframework.tests.sample.beans.BeanTests"/>
 
 	<bean id="props1" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 	  <property name="properties">
@@ -27,7 +27,7 @@
 	</bean>
 
 	<bean class="org.springframework.beans.factory.xml.CountingFactory">
-		<property name="testBean" ref="rob"/>
+		<property name="beanTest" ref="rob"/>
 	</bean>
 
 </beans>

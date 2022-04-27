@@ -3055,11 +3055,11 @@ configuration file and pass in the bean, as the following example shows:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter" lazy-init="false">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean1" value-ref="testBean"/>
+					<entry key="bean:name=testBean1" value-ref="beanTest"/>
 				</map>
 			</property>
 		</bean>
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3072,7 +3072,7 @@ exported to the JMX `MBeanServer`. In the default configuration, the key of each
 in the `beans` `Map` is used as the `ObjectName` for the bean referenced by the
 corresponding entry value. You can change this behavior, as described in <<jmx-naming>>.
 
-With this configuration, the `testBean` bean is exposed as an MBean under the
+With this configuration, the `beanTest` bean is exposed as an MBean under the
 `ObjectName` `bean:name=testBean1`. By default, all `public` properties of the bean
 are exposed as attributes and all `public` methods (except those inherited from the
 `Object` class) are exposed as operations.
@@ -3115,13 +3115,13 @@ You can also ensure that a specific `MBeanServer` is used by setting the value o
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean1" value-ref="testBean"/>
+					<entry key="bean:name=testBean1" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="server" ref="mbeanServer"/>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3273,13 +3273,13 @@ behavior to the `REPLACE_EXISTING` behavior:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean1" value-ref="testBean"/>
+					<entry key="bean:name=testBean1" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="registrationPolicy" value="REPLACE_EXISTING"/>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3444,7 +3444,7 @@ The following configuration shows how you can configure the `MBeanExporter` to u
 			<property name="attributeSource" ref="jmxAttributeSource"/>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.AnnotationTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.AnnotationTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3568,7 +3568,7 @@ bean name as the `ObjectName`, which results in a configuration similar to the f
 			<property name="assembler" ref="assembler"/>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3638,7 +3638,7 @@ this interface as the definition for the management interface:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean5" value-ref="testBean"/>
+					<entry key="bean:name=testBean5" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="assembler">
@@ -3650,7 +3650,7 @@ this interface as the definition for the management interface:
 			</property>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3690,7 +3690,7 @@ configuration:
 	<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 		<property name="beans">
 			<map>
-				<entry key="bean:name=testBean5" value-ref="testBean"/>
+				<entry key="bean:name=testBean5" value-ref="beanTest"/>
 			</map>
 		</property>
 		<property name="assembler">
@@ -3745,13 +3745,13 @@ The following code shows a sample configuration for the `KeyNamingStrategy`:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="testBean" value-ref="testBean"/>
+					<entry key="beanTest" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="namingStrategy" ref="namingStrategy"/>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -3759,7 +3759,7 @@ The following code shows a sample configuration for the `KeyNamingStrategy`:
 		<bean id="namingStrategy" class="org.springframework.jmx.export.naming.KeyNamingStrategy">
 			<property name="mappings">
 				<props>
-					<prop key="testBean">bean:name=testBean1</prop>
+					<prop key="beanTest">bean:name=testBean1</prop>
 				</props>
 			</property>
 			<property name="mappingLocations">
@@ -3773,7 +3773,7 @@ The following code shows a sample configuration for the `KeyNamingStrategy`:
 The preceding example configures an instance of `KeyNamingStrategy` with a `Properties` instance that
 is merged from the `Properties` instance defined by the mapping property and the
 properties files located in the paths defined by the mappings property. In this
-configuration, the `testBean` bean is given an `ObjectName` of `bean:name=testBean1`,
+configuration, the `beanTest` bean is given an `ObjectName` of `bean:name=testBean1`,
 since this is the entry in the `Properties` instance that has a key corresponding to the
 bean key.
 
@@ -3796,13 +3796,13 @@ configuration for the `MetadataNamingStrategy`:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="testBean" value-ref="testBean"/>
+					<entry key="beanTest" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="namingStrategy" ref="namingStrategy"/>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -4025,13 +4025,13 @@ proxy for an MBean running in a local `MBeanServer`:
 [subs="verbatim,quotes"]
 ----
 	<bean id="proxy" class="org.springframework.jmx.access.MBeanProxyFactoryBean">
-		<property name="objectName" value="bean:name=testBean"/>
+		<property name="objectName" value="bean:name=beanTest"/>
 		<property name="proxyInterface" value="org.springframework.jmx.IJmxTestBean"/>
 	</bean>
 ----
 
 In the preceding example, you can see that a proxy is created for the MBean registered under the
-`ObjectName` of `bean:name=testBean`. The set of interfaces that the proxy implements
+`ObjectName` of `bean:name=beanTest`. The set of interfaces that the proxy implements
 is controlled by the `proxyInterfaces` property, and the rules for mapping methods and
 properties on these interfaces to operations and attributes on the MBean are the same
 rules used by the `InterfaceBasedMBeanInfoAssembler`.
@@ -4050,7 +4050,7 @@ you can override this and provide an `MBeanServerConnection` that points to a re
 	</bean>
 
 	<bean id="proxy" class="org.springframework.jmx.access.MBeanProxyFactoryBean">
-		<property name="objectName" value="bean:name=testBean"/>
+		<property name="objectName" value="bean:name=beanTest"/>
 		<property name="proxyInterface" value="org.springframework.jmx.IJmxTestBean"/>
 		<property name="server" ref="clientConnector"/>
 	</bean>
@@ -4116,7 +4116,7 @@ example) to `notificationListenerMappings`:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean1" value-ref="testBean"/>
+					<entry key="bean:name=testBean1" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="notificationListenerMappings">
@@ -4128,7 +4128,7 @@ example) to `notificationListenerMappings`:
 			</property>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>
@@ -4153,7 +4153,7 @@ as the following example shows:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean1" value-ref="testBean"/>
+					<entry key="bean:name=testBean1" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="notificationListenerMappings">
@@ -4211,7 +4211,7 @@ different to what was presented previously, as the following example shows:
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="beans">
 				<map>
-					<entry key="bean:name=testBean1" value-ref="testBean"/>
+					<entry key="bean:name=testBean1" value-ref="beanTest"/>
 				</map>
 			</property>
 			<property name="notificationListeners">
@@ -4230,7 +4230,7 @@ different to what was presented previously, as the following example shows:
 			</property>
 		</bean>
 
-		<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<bean id="beanTest" class="org.springframework.jmx.JmxTestBean">
 			<property name="name" value="TEST"/>
 			<property name="age" value="100"/>
 		</bean>

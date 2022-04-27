@@ -5865,7 +5865,7 @@ shows the test template:
 					.build();
 		}
 
-		@Test
+		@com.lvlifeng.DemoTests
 		public void testDataAccess() {
 			JdbcTemplate template = new JdbcTemplate(db);
 			template.query( /* ... */ );
@@ -5895,7 +5895,7 @@ shows the test template:
 					.build()
 		}
 
-		@Test
+		@com.lvlifeng.DemoTests
 		fun testDataAccess() {
 			val template = JdbcTemplate(db)
 			template.query( /* ... */)

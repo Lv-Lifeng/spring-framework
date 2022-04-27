@@ -8,8 +8,8 @@
 		<exclude-unlisted-classes />
 	</persistence-unit>
 
-	<persistence-unit name="Test" transaction-type="RESOURCE_LOCAL">
-		<class>org.springframework.tests.sample.beans.TestBean</class>
+	<persistence-unit name="com.lvlifeng.DemoTests" transaction-type="RESOURCE_LOCAL">
+		<class>org.springframework.tests.sample.beans.BeanTests</class>
 		<exclude-unlisted-classes />
 	</persistence-unit>
 

@@ -191,44 +191,44 @@ Consider the following example:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<!-- target bean to be referenced by name -->
-	<bean id="testBean" class="org.springframework.beans.TestBean" scope="prototype">
+	<bean id="beanTest" class="org.springframework.beans.BeanTests" scope="prototype">
 		<property name="age" value="10"/>
 		<property name="spouse">
-			<bean class="org.springframework.beans.TestBean">
+			<bean class="org.springframework.beans.BeanTests">
 				<property name="age" value="11"/>
 			</bean>
 		</property>
 	</bean>
 
-	<!-- results in 10, which is the value of property 'age' of bean 'testBean' -->
-	<bean id="testBean.age" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/>
+	<!-- results in 10, which is the value of property 'age' of bean 'beanTest' -->
+	<bean id="beanTest.age" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/>
 ----
 
 The preceding configuration uses a Spring `FactoryBean` implementation (the
-`PropertyPathFactoryBean`) to create a bean (of type `int`) called `testBean.age` that
-has a value equal to the `age` property of the `testBean` bean.
+`PropertyPathFactoryBean`) to create a bean (of type `int`) called `beanTest.age` that
+has a value equal to the `age` property of the `beanTest` bean.
 
 Now consider the following example, which adds a `<util:property-path/>` element:
 
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	<!-- target bean to be referenced by name -->
-	<bean id="testBean" class="org.springframework.beans.TestBean" scope="prototype">
+	<bean id="beanTest" class="org.springframework.beans.BeanTests" scope="prototype">
 		<property name="age" value="10"/>
 		<property name="spouse">
-			<bean class="org.springframework.beans.TestBean">
+			<bean class="org.springframework.beans.BeanTests">
 				<property name="age" value="11"/>
 			</bean>
 		</property>
 	</bean>
 
-	<!-- results in 10, which is the value of property 'age' of bean 'testBean' -->
-	<util:property-path id="name" path="testBean.age"/>
+	<!-- results in 10, which is the value of property 'age' of bean 'beanTest' -->
+	<util:property-path id="name" path="beanTest.age"/>
 ----
 
 The value of the `path` attribute of the `<property-path/>` element follows the form of
 `beanName.beanProperty`. In this case, it picks up the `age` property of the bean named
-`testBean`. The value of that `age` property is `10`.
+`beanTest`. The value of that `age` property is `10`.
 
 [[xsd-schemas-util-property-path-dependency]]
 ===== Using `<util:property-path/>` to Set a Bean Property or Constructor Argument
@@ -243,10 +243,10 @@ The following example shows a path being used against another bean, by name:
 [source,xml,indent=0,subs="verbatim,quotes"]
 ----
 	// target bean to be referenced by name
-	<bean id="person" class="org.springframework.beans.TestBean" scope="prototype">
+	<bean id="person" class="org.springframework.beans.BeanTests" scope="prototype">
 		<property name="age" value="10"/>
 		<property name="spouse">
-			<bean class="org.springframework.beans.TestBean">
+			<bean class="org.springframework.beans.BeanTests">
 				<property name="age" value="11"/>
 			</bean>
 		</property>
@@ -268,7 +268,7 @@ In the following example, a path is evaluated against an inner bean:
 	<bean id="theAge"
 			class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
 		<property name="targetObject">
-			<bean class="org.springframework.beans.TestBean">
+			<bean class="org.springframework.beans.BeanTests">
 				<property name="age" value="12"/>
 			</bean>
 		</property>

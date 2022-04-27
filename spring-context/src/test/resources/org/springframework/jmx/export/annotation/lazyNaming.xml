@@ -9,7 +9,7 @@
 
 	<bean id="server" class="org.springframework.jmx.support.MBeanServerFactoryBean"/>
 
-	<bean id="testBean" class="org.springframework.jmx.export.annotation.AnnotationTestBean" lazy-init="true">
+	<bean id="beanTest" class="org.springframework.jmx.export.annotation.AnnotationTestBean" lazy-init="true">
 		<property name="name" value="TEST"/>
 		<property name="age" value="100"/>
 	</bean>

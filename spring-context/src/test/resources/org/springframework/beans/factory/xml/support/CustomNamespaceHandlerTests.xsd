@@ -13,7 +13,7 @@
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="testBean">
+	<xsd:element name="beanTest">
 		<xsd:complexType>
 			<xsd:attribute name="id" type="xsd:string" use="required" form="unqualified"/>
 			<xsd:attribute name="name" type="xsd:string" use="required" form="unqualified"/>

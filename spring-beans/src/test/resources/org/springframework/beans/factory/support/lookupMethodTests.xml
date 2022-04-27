@@ -5,17 +5,17 @@
 
 	<bean id="abstractBean" class="org.springframework.beans.factory.support.LookupMethodTests$AbstractBean">
 		<lookup-method name="get"/>  <!-- applying to overloaded methods, and based on return type since no bean name is given -->
-		<lookup-method name="getOneArgument" bean="testBean"/>
-		<lookup-method name="getTwoArguments" bean="testBean"/>
+		<lookup-method name="getOneArgument" bean="beanTest"/>
+		<lookup-method name="getTwoArguments" bean="beanTest"/>
 	</bean>
 
 	<bean id="extendedBean" parent="abstractBean">
 		<lookup-method name="getOneArgument" bean="jedi"/>
 	</bean>
 
-	<bean id="testBean" class="org.springframework.tests.sample.beans.TestBean" scope="prototype"/>
+	<bean id="beanTest" class="org.springframework.tests.sample.beans.BeanTests" scope="prototype"/>
 
-	<bean id="jedi" class="org.springframework.tests.sample.beans.TestBean" scope="prototype" autowire-candidate="false">
+	<bean id="jedi" class="org.springframework.tests.sample.beans.BeanTests" scope="prototype" autowire-candidate="false">
 		<property name="jedi" value="true"/>
 	</bean>
 
