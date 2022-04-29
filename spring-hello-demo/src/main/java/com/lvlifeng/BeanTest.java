@@ -5,7 +5,7 @@ package com.lvlifeng;
  * @date 2022-04-27 18:25
  */
 public class BeanTest {
-	private String name = "ChenHao";
+	private String name = "Hello";
 
 	public BeanTest(String name) {
 		this.name = name;
